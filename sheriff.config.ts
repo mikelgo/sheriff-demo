@@ -16,13 +16,28 @@ export const sheriffConfig: SheriffConfig = {
   version: 1,
   // todo make it work with multiple apps
   tagging: {
-    'apps/demo/src/app/<domain>/<feature>/<type>': [
+    // 'apps/demo/src/app/<domain>/<feature>/<type>': [
+    //   'domain:<domain>',
+    //   'feature:<feature>',
+    //   'type:<type>',
+    // ],
+    // 'apps/another-demo/src/app/<domain>/<feature>/<type>': [
+    //   'domain:<domain>',
+    //   'feature:<feature>',
+    //   'type:<type>',
+    // ],
+    'apps/<application>/src/app/<domain>/<feature>/<type>': [
+      'app:<application>',
       'domain:<domain>',
       'feature:<feature>',
       'type:<type>',
     ],
   },
   depRules: {
+    /**
+     * this will disallow that applications can import from each other
+     */
+    'app:*': [sameTag],
     /**
      * this will disallow that domains can import from each other
      */
