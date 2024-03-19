@@ -5,6 +5,7 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": ["plugin:@nx/typescript","plugin:@softarc/sheriff/default"],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
@@ -23,7 +24,7 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript","plugin:@softarc/sheriff/default"],
+      "extends": ["plugin:@nx/typescript"],
       "rules": {}
     },
     {

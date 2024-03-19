@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AdminDataService } from '../data-access';
 
 @Component({
   selector: 'app-customer-select',
@@ -8,4 +9,7 @@ import { CommonModule } from '@angular/common';
   template: `<p>customer-select works!</p>`,
   styles: ``,
 })
-export class CustomerSelectComponent {}
+export class CustomerSelectComponent {
+  // TODO should not be allowed
+  private data = inject(AdminDataService);
+}
